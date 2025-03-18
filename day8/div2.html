@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division Class Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            gap: 20px;
+        }
+        .division {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .division1 { background-color: #3498db; }
+        .division2 { background-color: #e74c3c; }
+        .division3 { background-color: #2ecc71; }
+        .division4 { background-color: #f39c12; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="division division1">Division 1</div>
+        <div class="division division2">Division 2</div>
+        <div class="division division3">Division 3</div>
+        <div class="division division4">Division 4</div>
+    </div>
+</body>
+</html>
