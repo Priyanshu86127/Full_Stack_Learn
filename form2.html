@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Form</title>
+<style>
+
+input[type=text]{
+width:15%;
+padding:10px;
+margin:0px;
+box-sizing:border-box;
+border-radius:10px;
+border:none;
+border-bottom:2px solid red;
+background-image:url(' ');
+}
+textarea{}
+select{
+ width:10px;
+ padding:10px;
+ margin:8px;
+ box-sizing:border-box;
+ border-radius:px;
+ border:none;
+ border-bottom:2px solid red;
+ }
+
+
+ body {
+    text-align: center;
+    background-color: #f4f4f4;
+}
+div{background-color:pink;width:700px;height:600px;margin:auto;}
+
+
+p{
+color:white;
+font-weight:bold;
+padding-top:20px;}
+
+</style>
+</head>
+<body>
+<form action="/action.php">
+<h1 style="color:red;text-decoration:underline";>Students Details</h1>
+<div style="color:blue";>Basic Forms
+<div class="mydiv">
+<ul>
+<li style="color:red;text-align:left;"><p style="color:red;text-align:left;">Fill all information correctly.
+</p></li>
+</ul>
+<form style="text-align:left;padding-left:20px;">
+<label for="fname">First Name: </label>
+<input type="text" required id="fname" name="fname"/>
+<br><br>
+<label for="Iname">Last Name:</label>
+<input type="text" id="Iname" name="Iname">
+<br><br>
+<label for="Iname">Qualification:</label>
+<input type="text" id="Iname" name="Iname">
+<h4 style="color:blue;text-align:centre";>Gender:</h4>
+<input type="radio" id="Female" name="favsubject" value="Female">
+<label for="Female">Female</label>
+
+<input type="radio" id="Male" name="favsubject" value="Male">
+<label for="Male">Male</label>
+<br>
+<input type="radio" id="Other" name="favsubject" value="Other">
+<label for="Other">Other</label>
+
+<br><br>
+<label for="fname">Email: </label>
+<input type="text" id="fname" name="fname">
+<br><br>
+<h3>Which is your favourite subject</h3>
+<input type="checkbox" id="Science" name="favsubject" value="Science">
+<label for="Science">Science</label>
+
+<input type="checkbox" id="English" name="favsubject" value="English">
+<label for="English">English</label>
+<input type="checkbox" id="Math" name="favsubject" value="Math">
+<label for="Math">Math</label>
+<br><br>
+<select id="country" name="country">
+<h3>Choose your company name</h3>
+<option value="India">India</option>
+<option value="USA">USA</option>
+<option value="Australia">Australia</option>
+<option value="China">China</option>
+
+</select>
+<input type="button" value="Button">
+
+<button style="color:#cc51fc;backgrond-color:#d4ebb0";>Submit</button>
+
+<button style="color:#cc51fc;backgrond-color:#d4ebb0";>Reset</button>
+
+</form>
+
+</body>
+</body>
+</head>
