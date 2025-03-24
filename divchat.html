@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:pink;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .box {
+            width: 150px;
+            text-align: center;
+            padding: 20px;
+            background:#7ef2ee;
+            border-radius: 10px;
+        }
+        .box img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="icons8-home-50.png" alt="Home">
+            <h3>Home</h3>
+        </div>
+        <div class="box">
+            <img src="icons8-about-64.png" alt="About">
+            <h3>About</h3>
+        </div>
+        <div class="box">
+            <img src="icons8-gallery-48.png" alt="Gallery">
+            <h3>Gallery</h3>
+        </div>
+        <div class="box">
+            <img src="icons8-new-contact-48.png" alt="Contact">
+            <h3>Contact</h3>
+        </div>
+    </div>
+</body>
+</html>
