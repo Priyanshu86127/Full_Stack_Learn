@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Functionality Demo</title>
+  <style>
+    .section {
+      background-color: #e0f7fa;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    #output {
+      background-color: #f1f8e9;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 1. Basic Information Form -->
+<div class="section">
+  <h2>1. Basic Information Form</h2>
+  <form id="infoForm">
+    Name: <input type="text" id="name"><br><br>
+    Age: <input type="number" id="age"><br><br>
+    Email: <input type="email" id="email"><br><br>
+    <button type="button" onclick="showInfo()">Submit</button>
+  </form>
+  <div id="output"></div>
+</div>
+
+<!-- 2. Change Image on Button Click -->
+<div class="section">
+  <h2>2. Change Image on Button Click</h2>
+  <img id="image" src="https://via.placeholder.com/150" width="150" height="150"><br><br>
+  <button onclick="changeImage()">Change Image</button>
+</div>
+
+<!-- 3. Increase and Decrease Font Size -->
+<div class="section">
+  <h2>3. Font Size Changer</h2>
+  <p id="textSample">This is sample text.</p>
+  <button onclick="increaseFont()">Increase Font</button>
+  <button onclick="decreaseFont()">Decrease Font</button>
+</div>
+
+<!-- 4. Current Date and Time -->
+<div class="section">
+  <h2>4. Show Current Date & Time</h2>
+  <button onclick="showDateTime()">Show Date & Time</button><br><br>
+  <div id="datetime"></div>
+</div>
+
+<script>
+  // 1. Show Form Data
+  function showInfo() {
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const email = document.getElementById("email").value;
+
+    const outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `Name: ${name} <br> Age: ${age} <br> Email: ${email}`;
+  }
+
+  // 2. Change Image
+  function changeImage() {
+    document.getElementById("image").src = "https://via.placeholder.com/150/ff4444/ffffff?text=New+Image";
+  }
+
+  // 3. Font Size Control
+  let fontSize = 16;
+  function increaseFont() {
+    fontSize += 2;
+    document.getElementById("textSample").style.fontSize = fontSize + "px";
+  }
+  function decreaseFont() {
+    fontSize -= 2;
+    document.getElementById("textSample").style.fontSize = fontSize + "px";
+  }
+
+  // 4. Show Date & Time
+  function showDateTime() {
+    const now = new Date();
+    document.getElementById("datetime").innerHTML = now.toString();
+  }
+</script>
+
+</body>
+</html>
