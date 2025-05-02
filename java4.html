@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>JavaScript Functionality Demo</title>
+  <style>
+    .section {
+      background-color:#FF9A9A;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    #output {
+      background-color:#DDEB9D;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="section">
+  <h2>1. Basic Information Form</h2>
+  <form id="infoForm">
+    Name: <input type="text" id="name"><br><br>
+    Age: <input type="number" id="age"><br><br>
+    Email: <input type="email" id="email"><br><br>
+    <button type="button" onclick="showInfo()">Submit</button>
+  </form>
+  <div id="output"></div>
+</div>
+
+<div class="section">
+  <h2>2. Change Image on Button Click</h2>
+  <img id="image" src="./Girl1.jpg" width="150" height="150"><br><br>
+  <button onclick="changeImage()">Change Image</button>
+</div>
+
+<div class="section">
+  <h2>3. Font Size Changer</h2>
+  <p id="textSample">This is sample text.</p>
+  <button onclick="increaseFont()">Increase Font</button>
+  <button onclick="decreaseFont()">Decrease Font</button>
+</div>
+
+<div class="section">
+  <h2>4. Show Current Date & Time</h2>
+  <button onclick="showDateTime()">Show Date & Time</button><br><br>
+  <div id="datetime"></div>
+</div>
+
+<script>
+  function showInfo() {
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const email = document.getElementById("email").value;
+
+    const outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `Name: ${name} <br> Age: ${age} <br> Email: ${email}`;
+  }
+
+  function changeImage() {
+    document.getElementById("image").src = "./girl2.jpg";
+  }
+
+  let fontSize = 16;
+  function increaseFont() {
+    fontSize += 2;
+    document.getElementById("textSample").style.fontSize = fontSize + "px";
+  }
+  function decreaseFont() {
+    fontSize -= 2;
+    document.getElementById("textSample").style.fontSize = fontSize + "px";
+  }
+
+  function showDateTime() {
+    const now = new Date();
+    document.getElementById("datetime").innerHTML = now.toString();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+</head>
+<body>
+<script>
+	function FirstPro(){
+		document.write("Hlw EveryOne!<br>");
+		document.write("I'm Priyanshu kumari.<br>");
+		document.write("I'm From Lalganj.<br>");
+		document.write("BIHAR<br>");
+	}
+	FirstPro();
+// 1. Print your name and address
+let name = "Priyanshu Kumari<br>";
+let address = "Lalganj,Vaishali<br>";
+document.write("Name: ", name);
+document.write("Address: ", address);
+
+
+// 2. Check whether value and data-type of two variables are same
+let a = 5;
+let b = '5';
+
+if (a === b) {
+   document.write("Both value and data type are same.<br>");
+} else {
+ document.write("Either value or data type is different.<br>");
+}
+
+
+// 3. Add two strings and return them with all alphabet capital
+let str1 = "hello ";
+let str2 = "world<br>";
+let combined = (str1 + str2).toUpperCase();
+document.write("Combined String:<br>", combined);
+
+
+// 4. Convert the length of a given string in bytes
+function stringByteLength(str) {
+    return new Blob([str]).size;
+}
+let myString = "Hello, world!<br>";
+document.write("<p>Byte length: </p>", stringByteLength(myString));
+
+
+// 5. Round a number to a specified amount of digits
+function roundNumber(num, digits) {
+    return Number(num.toFixed(digits));
+}
+document.write("<p>Rounded (2 digits): </p>", roundNumber(3.14159, 2));       // 3.14
+document.write("<p>Rounded (4 digits): </p>", roundNumber(123.456789, 4));    // 123.4568
+
+</script>
+</body>
+</html>
+		

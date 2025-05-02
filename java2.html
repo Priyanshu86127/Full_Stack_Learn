@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Function Examples</title>
+  <style>
+    body {
+      background-color: #pink;
+      font-family: elephant, lucida-calligraphy;
+      padding: 20px;
+    }
+    .box {
+      background-color: #e0B7fa;
+      border: 1px solid #cEc;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h3>Q1. Filter Out Negative Numbers</h3>
+    <p id="filterResult"></p>
+  </div>
+
+  <div class="box">
+    <h3>Q2. Difference from 13</h3>
+    <p id="diffResult"></p>
+  </div>
+
+  <div class="box">
+    <h3>Q3. Fibonacci Series</h3>
+    <p id="fibResult"></p>
+  </div>
+
+  <div class="box">
+    <h3>Q4. Sum of Multiples of 3 and 5 under 1000</h3>
+    <p id="sumResult"></p>
+  </div>
+
+  <div class="box">
+    <h3>Q5. Program For Cube using Function Object</h3>
+    <p id="cubeResult"></p>
+  </div>
+
+  <script>
+    function filterNegatives(arr) {
+      return arr.filter(num => num >= 0);
+    }
+    document.getElementById("filterResult").innerHTML = 
+      filterNegatives([-4, 5, -2, 9, 0, -1]).join(", ");
+
+    function diffFrom13(n) {
+      return n > 13 ? 2 * Math.abs(n - 13) : Math.abs(n - 13);
+    }
+    document.getElementById("diffResult").innerHTML = 
+      `diffFrom13(20): ${diffFrom13(20)}<br>diffFrom13(10): ${diffFrom13(10)}`;
+
+    function fibonacci(n) {
+      let fib = [0, 1];
+      for (let i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+      }
+      return fib.slice(0, n);
+    }
+    document.getElementById("fibResult").innerHTML = 
+      fibonacci(10).join(", ");
+
+    function sumMultiples() {
+      let sum = 0;
+      for (let i = 0; i < 1000; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          sum += i;
+        }
+      }
+      return sum;
+    }
+    document.getElementById("sumResult").innerHTML = 
+      sumMultiples();
+
+    const cube = new Function("n", "return n * n * n;");
+    document.getElementById("cubeResult").innerHTML = 
+      `Cube of 9 is: ${cube(9)}<br>Cube of 11 is: ${cube(11)}`;
+
+    console.log("Array filled with 7s:", new Array(5).fill(7)); 
+  </script>
+
+</body>
+</html>
