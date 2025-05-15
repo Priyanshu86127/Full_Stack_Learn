@@ -1,1 +1,133 @@
-<a href="day1.html">Click to see my tasks.</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Exception Handling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #63e992;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px;
+    }
+    nav a {
+      color: rgb(234, 161, 161);
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    section {
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+    }
+    pre {
+      background: #79a3e2;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#prog1">Undeclared Variable</a>
+    <a href="#prog2">Divide by Zero</a>
+    <a href="#prog3">Array Out of Bounds</a>
+    <a href="#prog4">Finally Block</a>
+  </nav>
+
+  <!-- Program 1 -->
+  <section id="prog1">
+    <h2>1. Handle Exception: Undeclared Variable</h2>
+    <button onclick="runProgram1()">Run</button><br><br>
+    <pre id="output1"></pre>
+  </section>
+
+  <!-- Program 2 -->
+  <section id="prog2">
+    <h2>2. Throw "Divide by Zero" Error</h2>
+    <button onclick="runProgram2()">Run</button><br><br>
+    <pre id="output2"></pre>
+  </section>
+
+  <!-- Program 3 -->
+  <section id="prog3">
+    <h2>3. Throw "Out of Bound" Error</h2>
+    <button onclick="runProgram3()">Run</button><br><br>
+    <pre id="output3"></pre>
+  </section>
+
+  <!-- Program 4 -->
+  <section id="prog4">
+    <h2>4. Exception Handling using Finally</h2>
+    <button onclick="runProgram4()">Run</button><br><br>
+    <pre id="output4"></pre>
+  </section>
+
+  <script>
+    function runProgram1() {
+      let output;
+      try {
+        output = undeclaredVar; // This will cause ReferenceError
+      } catch (error) {
+        output = "Caught Exception: " + error.message;
+      }
+      document.getElementById("output1").textContent = output;
+    }
+
+    function runProgram2() {
+      let output;
+      try {
+        let a = 10;
+        let b = 0;
+        if (b === 0) {
+          throw new Error("Divide by zero error");
+        }
+        let c = a / b;
+        output = "Result: " + c;
+      } catch (error) {
+        output = "Caught Exception: " + error.message;
+      }
+      document.getElementById("output2").textContent = output;
+    }
+
+    function runProgram3() {
+      let output;
+      try {
+        let arr = [1, 2, 3];
+        let index = 5;
+        if (index >= arr.length) {
+          throw new Error("Array index out of bounds");
+        }
+        output = "Element: " + arr[index];
+      } catch (error) {
+        output = "Caught Exception: " + error.message;
+      }
+      document.getElementById("output3").textContent = output;
+    }
+
+    function runProgram4() {
+      let output = "";
+      try {
+        output += "Inside try block<br>";
+        throw new Error("Custom error");
+      } catch (error) {
+        output += "Caught Exception: " + error.message + "<br>";
+      } finally {
+        output += "Finally block always runs";
+      }
+      document.getElementById("output4").innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
