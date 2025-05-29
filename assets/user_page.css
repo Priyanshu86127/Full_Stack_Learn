@@ -1,0 +1,224 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: url(./foodbg_blur.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Navbar Container */
+.nav {
+    width: 100%;
+    height: 60px;
+    background: #4A90E2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    position: relative;
+}
+
+/* Greeting */
+.nav .greeting {
+    font-size: 1.4rem;
+    color: #fff;
+}
+.nav .greeting span {
+    color: #FFD700;
+    margin-left: 0.3rem;
+}
+
+/* Logout Button */
+.nav .logout-btn {
+    background: #fff;
+    color: #4A90E2;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.nav .logout-btn:hover {
+    background: #e6e6e6;
+}
+
+/* Hamburger Icon */
+.nav .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.nav .hamburger div {
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu */
+.nav .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background: #4A90E2;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.nav .dropdown a,
+.nav .dropdown button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.nav .dropdown a:hover,
+.nav .dropdown button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Cards Container (2-column flex) */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 calc(25% - 1.5rem);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+
+.card h3 {
+    margin: 0.75rem 1rem 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card .desc {
+    margin: 0 1rem;
+    font-size: 0.9rem;
+    color: #555;
+    flex-grow: 1;
+}
+
+.card .price {
+    margin: 0.5rem 1rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.order-btn {
+    margin: 0 1rem 1rem;
+    padding: 0.6rem 1rem;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: opacity 0.3s ease;
+}
+
+.order-btn:hover {
+    opacity: 0.9;
+}
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.modal-content .tick-animation {
+  font-size: 3rem;
+  color: #28a745;
+  animation: pop 0.5s ease-out forwards;
+  opacity: 0;
+  margin-bottom: 1rem;
+}
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+#modal-ok {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#modal-ok:hover {
+  opacity: 0.9;
+}
+
+
+/* Responsive */
+@media (max-width: 800px) {
+    .card {
+        flex: 0 1 100%;
+    }
+}
+@media (max-width: 600px) {
+    .nav .logout-btn {
+        display: none;
+    }
+    .nav .hamburger {
+        display: flex;
+    }
+    .nav .hamburger.active + .dropdown {
+        display: block;
+    }
+}
